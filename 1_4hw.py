@@ -11,6 +11,8 @@ else:
         current = num % 10
         if (current > high_nun):
             high_nun = current
+            if high_nun == 9:
+                break
         num = int(num // 10)
 
 print(high_nun)
