@@ -27,7 +27,12 @@ class clothes(ABC):
 
     @name.setter
     def name(self, name):
-        self.__name = name + " (tm)"
+        self.__name = name;
+
+    @name.getter
+    def name(self):
+        return self.__name + "(tm)"
+
 
     @property
     def Fabric(self):
