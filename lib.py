@@ -33,3 +33,4 @@ def getNumFromString(in_string):
         return 0
     else:
         return int(reduce(sum, list))
+
