@@ -1,6 +1,9 @@
+
+=======
 from functools import reduce
 
 # Ввод число от пользователя
+
 def GetNumberFromUser(Question):
     while True:
         number = input(Question + "?: ")
@@ -11,6 +14,11 @@ def GetNumberFromUser(Question):
         else:
             return int(number)
 
+
+def multiple(prev_el, el):
+    return prev_el * el
+
+=======
 
 # Ввод любого значения от пользователя
 def GetAnyValue():
@@ -33,4 +41,5 @@ def getNumFromString(in_string):
         return 0
     else:
         return int(reduce(sum, list))
+
 
