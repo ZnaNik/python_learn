@@ -1,3 +1,40 @@
+
+#6. В одномерном массиве найти сумму элементов, находящихся между минимальным и максимальным элементами.
+# Сами минимальный и максимальный элементы в сумму не включать
+from time import time
+import random
+import cProfile
+
+def les_6(max):
+    start_time = time()
+    arr = [random.randint(-10000,10000) for el in range(0,max)]
+
+    min_ind = 0
+    max_ind= 0
+    for el in range(0, len(arr)):
+        if (arr[min_ind] > arr[el]):
+            min_ind = el
+        elif (arr[max_ind] > arr[el]):
+            max_ind = el
+
+    sum = 0
+    print(f"Минимальный индекс {min_ind} , Максимальный индекс {max_ind}")
+    if (min_ind > max_ind):
+        max_ind,min_ind  = min_ind, max_ind
+    for el in range(min_ind+1, max_ind-1):
+        sum = sum + arr[el]
+
+    print(f"Сумма {sum}")
+    print(f"Время: {time() - start_time}")
+
+
+cProfile.run('les_6(500000)')
+#Не совсем понял суть задания.
+#Проанализировал, понял что у меня больше времени тратится на генерацию рандомных элементов , что и было в сути задания
+#Как ускорить не ясно, поскольку все равно придется брать рандомный элемент на каждое значение.
+#Наверное можно чуть ускорить задачу, если при генерации элементов, сразу смотреть больше он максимального или нет, и не делать
+#Второй обход массива
+quit()
 from time import time
 
 def cached(func):
